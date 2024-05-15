@@ -18,6 +18,9 @@ Requisições AJAX: Utiliza requisições AJAX para melhorar a experiência do usuári
 O repositório está organizado da seguinte forma:
 
 css: Contem todo o código CSS realizado no website
+
 galeria: imagens utilizadas para a galeria do projeto
+
 logo: local para armazenar a logo em diferentes resoluções
+
 scriptSQL: Local para armazenar os scripts em SQL utilizados para a criação das tabelas

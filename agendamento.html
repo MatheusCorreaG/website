@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Agendamento </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/agendamento.css">
+
+
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <img src="logo/logo.png" width="200" alt="logo">
+        </header>
+        <nav>
+            <ul>
+                <li><a href="index.html"> Home</a></li>
+                <li><a href="galeria.html"> Galeria</a></li>
+                <li><a href="contato.html"> Contato</a></li>
+                <li><a href="login.html"> Login</a></li>
+            </ul>
+        </nav>
+        <main>
+
+            <form action="cadastra-agendamento.php" method="post">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label>Especialidade médica:
+                            <select name="Especialidade" id="especialidade">
+                                <option value="" selected> Selecione a especialidade</option>
+                            </select>
+                        </label>
+
+
+                    </div>
+                    <div class="col-md-6">
+                        <label>Médico especialista:
+                            <select name="Medico" id="medico">
+                                <option value="" selected> Selecione o médico</option>
+                            </select>
+                        </label>
+                    </div>
+                    <div class="col-md-8">
+                        <label>Nome:
+                            <select name="paciente" id="paciente">
+                                <option value="" selected> Selecione seu nome</option>
+                            </select>
+                        </label>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="sexo"> Sexo:</label>
+                        <input type="text" id="sexo" name="sexo">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="telefone"> Telefone:</label>
+                        <input type="tel" id="telefone" name="telefone">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="email"> Email:</label>
+                        <input type="email" id="email" name="email">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="data"> Data:</label>
+                        <input type="datetime-local" id="data" name="data">
+                    </div>
+
+                    <button type="submit"> Agendar</button>
+
+                </div>
+            </form>
+
+        </main>
+    </div>
+    <script>
+        function buscaEspecialidade() {
+            let xhr = new XMLHttpRequest(); //instanciando objeto para a função xmlhttp
+            xhr.open("GET", "busca-especialidade.php"); //informando que irei utilizar a requisição "GET" e o arquivo php "busca-especialidade"
+            xhr.responseType = 'json';
+
+            xhr.onload = function () {
+                if (xhr.status == 200) { //conferindo o status da execução
+                    let arrayespec = xhr.response
+                    arrayespec.forEach(function (medico) {
+                        var option = document.createElement("option");
+                        option.value = medico.especialidade;
+                        option.textContent = medico.especialidade;
+                        document.getElementById("especialidade").appendChild(option);
+                    });
+
+                }
+
+                else {
+                    console.log(xhr.status, xhr.statusText, xhr.responseText); //printa na tela as informações referente ao status da função xhr.
+                }
+            };
+
+            xhr.onerror = function () {
+                console.log("Erro de rede"); //caso haja erro de rede, essa mensagem é impressa na tela
+            };
+
+            xhr.send();
+        }
+
+        function buscaMedico(especialidade) {
+            let xhr = new XMLHttpRequest(); //instanciando objeto para a função xmlhttp
+            xhr.open("GET", "busca-medico.php?especialidade=" + especialidade); //informando que irei utilizar a requisição "GET" e o arquivo php "busca-medico"
+
+            xhr.onload = function () {
+                if (xhr.status == 200) { //conferindo o status da execução
+                    console.log("Resposta do servidor:", xhr.responseText);
+                    document.getElementById("medico").innerHTML = ""; // limpa o conteúdo option
+
+
+                    JSON.parse(xhr.responseText).forEach(function (medico) {
+                        var option = document.createElement("option");
+                        option.value = medico.nome;
+                        option.textContent = medico.nome;
+                        document.getElementById("medico").appendChild(option);
+                    })
+                }
+
+                else {
+                    console.log(xhr.status, xhr.statusText, xhr.responseText); //printa na tela as informações referente ao status da função xhr.
+                }
+            };
+
+            xhr.onerror = function () {
+                console.log("Erro de rede"); //caso haja erro de rede, essa mensagem é impressa na tela
+            };
+
+            xhr.send();
+        }
+
+        function buscaPaciente() {
+            let xhr = new XMLHttpRequest(); //instanciando objeto para a função xmlhttp
+            xhr.open("GET", "busca-paciente.php"); //informando que irei utilizar a requisição "GET" e o arquivo php "busca-especialidade"
+            xhr.responseType = 'json';
+
+            xhr.onload = function () {
+                if (xhr.status == 200) { //conferindo o status da execução
+                    let arraypct = xhr.response
+                    arraypct.forEach(function (paciente) {
+                        var option = document.createElement("option");
+                        option.value = paciente.nome;
+                        option.textContent = paciente.nome;
+                        document.getElementById("paciente").appendChild(option);
+                    });
+
+                }
+
+                else {
+                    console.log(xhr.status, xhr.statusText, xhr.responseText); //printa na tela as informações referente ao status da função xhr.
+                }
+            };
+
+            xhr.onerror = function () {
+                console.log("Erro de rede"); //caso haja erro de rede, essa mensagem é impressa na tela
+            };
+
+            xhr.send();
+        }
+
+        function buscaInfos(paciente) {
+            let xhr = new XMLHttpRequest(); //instanciando objeto para a função xmlhttp
+            xhr.open("GET", "busca-pacienteInfo.php?nome=" + paciente); //informando que irei utilizar a requisição "GET" 
+            xhr.responseType = 'json';
+
+            xhr.onload = function () {
+                if (xhr.status == 200) { //conferindo o status da execução
+                    const pct = xhr.response[0];
+                    let form = document.querySelector("form"); //armazenando o form em uma variável
+                    form.sexo.value = pct.sexo; //atribuindo os valores do arquivo json para o formulario
+                    form.telefone.value = pct.telefone;
+                    form.email.value = pct.email;
+                }
+
+            
+
+                else {
+                console.log(xhr.status, xhr.statusText, xhr.responseText); //printa na tela as informações referente ao status da função xhr.
+            }
+        };
+
+        xhr.onerror = function () {
+            console.log("Erro de rede"); //caso haja erro de rede, essa mensagem é impressa na tela
+        };
+
+        xhr.send();
+        }
+
+        window.onload = function () {
+            buscaEspecialidade();
+            buscaPaciente();
+            const inputSelect = document.querySelector("#especialidade");
+            const inputSelectPct = document.querySelector("#paciente");
+            inputSelect.onchange = () => buscaMedico(inputSelect.value);
+            inputSelectPct.onchange = () => buscaInfos(inputSelectPct.value);
+        }
+
+
+
+    </script>
+</body>
+
+</html>

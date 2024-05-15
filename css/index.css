@@ -1,0 +1,86 @@
+body {
+    font-family: 'avenir-lt-w05_35-light', 'Arial Narrow', Arial, sans-serif;
+    margin-inline: 80px;
+    margin-left: 0;
+    margin-right: 0;
+    background-color: rgb(255, 255, 255);
+    background-size: cover;
+}
+
+header {
+    width: 100%;
+    height: 0;
+}
+
+img {
+    right: 75%;
+    margin-top: -55px;
+}
+
+nav {
+    
+    background-color: #ffffff;
+    width: 100%;
+    height: 95px;
+    text-align: center;
+    margin-top: -10px;
+}
+
+nav li{
+    display: inline-block;
+    margin: 0 10px;
+}
+
+nav ul {
+    padding: 0;
+    margin: 0;
+}
+
+li a {
+    text-decoration: none;
+    color: rgb(94, 86, 86);
+    font-size: large;
+    margin: 30px;
+    margin-left: 10px;
+    line-height: 120px;
+}
+
+main {
+    background-image: url(../galeria/bg5.jpg);
+    margin-top: 6px;
+    background-color: rgb(43, 41, 41);
+    padding: 15px;
+}
+
+article {
+    font-size: 15px;
+    color:rgb(43, 42, 42);
+    margin: 30px;
+    text-align: justify;
+    padding: 50px;
+    background-color: #ffffff;
+    border: 1px solid #504d4d;
+    margin-top: 30px;
+}
+
+
+h2 {
+    font-weight: 550;
+    font-size: xx-large;
+}
+
+h3 {
+    font-size: medium;
+    font-weight: normal;
+}
+
+h3 + ul {
+    list-style: circle;
+    line-height: 35px;
+}
+
+article:first-child {
+    margin-top: 70px;
+    margin-bottom: 55px; 
+}
+

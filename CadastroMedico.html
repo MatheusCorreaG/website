@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro medico </title>
+    <link rel="stylesheet" href="css/cadastroMedico.css">
+</head>
+
+<body>
+    <header>
+        <img src="logo/logo.png" width="200" alt="logo">
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html"> Home</a></li>
+
+            <li><a href="login.html"> Login</a></li>
+        </ul>
+    </nav>
+    <main>
+        <form action="cadastra-medico.php" method="post">
+            <div>
+                <label for="Nome"> Nome:</label>
+                <input type="text" id="Nome" name="Nome">
+            </div>
+            <div>
+                <label for="Especialidade"> Especialidade:</label>
+                <input type="text" id="Especialidade" name="Especialidade">
+            </div>
+            <div>
+                <label for="CRM"> CRM:</label>
+                <input type="text" id="CRM" name="CRM">
+            </div>
+            <button type="submit">
+                Cadastrar
+            </button>
+        </form>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Contato </title>
+    <link rel="stylesheet" href="css/contato.css">
+</head>
+
+<body>
+    <header>
+        
+        <img src="logo/logo.png" width="200" alt="logo">
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html"> Home</a></li>
+            <li><a href="galeria.html"> Galeria</a></li>
+            <li><a href="contato.html"> Contato</a></li>
+            <li><a href="login.html"> Login</a></li>
+            <li><a href="agendamento.html"> Agendamento</a></li>
+        </ul>
+    </nav>
+    <main>
+        
+        <form action="cadastra-contato.php" method="post">
+            <h1>
+                Contate-nos
+            </h1>
+            <div>
+                <label for="Nome"> Nome:</label>
+                <input type="text" id="Nome" name="Nome">
+            </div>
+            <div>
+                <label for="email"> E-mail:</label>
+                <input type="email" id="email" name="email">
+            </div>
+            <div>
+                <label for="Telefone"> Telefone:</label>
+                <input type="tel" id="Telefone" name="Telefone">
+            </div>
+            <div>
+                <p>Deixe aqui sua dúvida, sugestão ou feedback:</p>
+                <textarea name="duvida" rows="10" cols="50">
+                </textarea>
+            </div>
+            <button type="submit">
+                Enviar
+            </button>
+        </form>
+    </main>
+    <footer>
+        <address> Av. João Naves de Ávila, 2121 - Santa Mônica, Uberlandia - MG </address>
+    </footer>
+</body>
+</html>

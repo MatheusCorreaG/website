@@ -1,0 +1,123 @@
+body {
+    font-family: 'avenir-lt-w05_35-light', 'Arial Narrow', Arial, sans-serif;
+    margin-inline: 0px;
+    margin-left: 0;
+    margin-right: 0;
+    background-color: rgb(255, 255, 255);
+    
+}
+
+header H1 {
+    color: #222324;
+    text-align: center;
+}
+
+header img {
+    position: absolute;
+    margin-top: -45px;
+}
+
+nav {
+    
+    background-color: #ffffff;
+    margin: 0 auto;
+    width: 100%;
+    height: 95px;
+    text-align: center;
+    border-radius: 5px;
+    margin-top: -10px;
+}
+
+nav ul {
+    padding: 0;
+    margin: 0;
+}
+nav li{
+    display: inline-block;
+    margin: 0 10px;
+}
+
+
+li a {
+    text-decoration: none;
+    color: rgb(94, 86, 86);
+    font-size: large;
+    margin: 30px;
+    margin-left: 10px;
+    line-height: 120px;
+}
+
+main {
+    background-image: url(../galeria/bg5.jpg);
+    margin-top: 6px;
+    background-color: rgb(43, 41, 41);
+    padding: 15px;
+}
+
+form h1{
+    text-align: center;
+    color: #222324;
+
+}
+form {
+    margin-top: 130px;
+    margin-left: 22%;
+    margin-right: 22%;
+    margin-bottom: 130px;
+    padding: 50px;
+    background-color: white;
+    
+}
+form div {
+    padding: 10px;
+}
+
+input{
+    display: block;
+    border: 1px solid rgb(206, 196, 196);
+    border-radius: 5px;
+    width: 100%;
+    height: 30px;
+    
+    
+}
+
+form div input:focus {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+button{
+    margin-left: 12px;
+    height: 35px;
+    background-color: #222324;
+    color: white;
+    border: 1px solid #222324;
+    box-sizing: border-box;
+}
+
+
+
+
+input:invalid{
+    border: 1px solid red
+
+}
+
+select {
+    width: 100%;
+    height: 30px;
+    font-size: 13px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+    color: #333;
+    
+    
+    
+}
+
+select:focus {
+    border-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+

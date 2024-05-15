@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro paciente </title>
+    <link rel="stylesheet" href="css/CadastroFuncionario.css">
+</head>
+
+<body>
+    <header>
+        <img src="logo/logo.png" width="200" alt="logo">
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html"> Home</a></li>
+
+            <li><a href="login.html"> Login</a></li>
+        </ul>
+    </nav>
+    <main>
+        <form action="cadastra-paciente.php" method="post">
+            <div>
+                <label for="nome"> Nome:</label>
+                <input type="text" id="nome" name="nome">
+            </div>
+            <div>
+                <label>Sexo:
+                    <select name="sexo">
+                        <option value="Masculino" selected> Masculino</option>
+                        <option value="Feminino"> Feminino</option>
+                        <option value="Outro"> Outro</option>
+                    </select>
+                </label>
+            </div>
+            <div>
+                <label for="email"> Email:</label>
+                <input type="email" id="email" name="email">
+            </div>
+            <div>
+                <label for="telefone"> Telefone:</label>
+                <input type="tel" id="telefone" name="telefone">
+            </div>
+            <button type="submit">
+                Cadastrar
+            </button>
+        </form>
+    </main>
+</body>
+
+</html>
